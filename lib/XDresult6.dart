@@ -2,21 +2,22 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
- 
 
 class XDresult6 extends StatelessWidget {
   XDresult6({
-   Key? key, File? image,
+    Key? key,
+    this.image,
   }) : super(key: key);
+  File? image;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffffffff),
       body: Stack(
         children: <Widget>[
- Pinned.fromPins(
+          Pinned.fromPins(
               Pin(size: 300.0, middle: 0.5142), Pin(size: 300.0, start: 160.0),
-              child: Image.asset('assets/fourthImage.png')),
+              child: Image.file(image!)),
           Pinned.fromPins(
             Pin(start: 59.0, end: 58.0),
             Pin(size: 50.0, middle: 0.7511),
