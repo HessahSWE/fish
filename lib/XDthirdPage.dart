@@ -2,7 +2,7 @@ import 'package:fish/XDfifthPage.dart';
 import 'package:fish/XDfourthPage.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+ 
 
 class XDthirdPage extends StatelessWidget {
   XDthirdPage({

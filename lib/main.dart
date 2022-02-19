@@ -1,9 +1,4 @@
 
-import 'package:fish/XDfifthPage.dart';
-import 'package:fish/XDfourthPage.dart';
-import 'package:fish/XDsecondPage.dart';
-import 'package:fish/XDthirdPage.dart';
-import 'package:fish/tensorflow.dart';
 import 'package:flutter/material.dart';
 import 'XDfirstPage.dart';
 
