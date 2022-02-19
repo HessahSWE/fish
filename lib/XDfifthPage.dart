@@ -7,13 +7,15 @@ import 'package:flutter/services.dart';
 
 import 'package:image_picker/image_picker.dart';
 
-class XDfifthPage extends StatelessWidget {
+class XDfifthPage extends StatefulWidget {
   XDfifthPage({
     Key? key,
   }) : super(key: key);
 
-  
+  XDfifthPagee createState() => XDfifthPagee();
+}
 
+class XDfifthPagee extends State<XDfifthPage> {
   File? imageTake;
   Future pickImage() async {
     try {
@@ -47,14 +49,23 @@ class XDfifthPage extends StatelessWidget {
             Pin(start: 59.0, end: 58.0),
             Pin(size: 50.0, middle: 0.7511),
             child: GestureDetector(
-              onTap: () {
-                pickImage();
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
+              onTap: () async {
+                try {
+                  await pickImage();
+
+                  setState(() async {
+                    await Navigator.push(
+                      context,
+                      MaterialPageRoute(
                         builder: (context) => XDresult6(
-                              image: imageTake!,
-                            )));
+                          image: imageTake as File,
+                        ),
+                      ),
+                    );
+                  });
+                } catch (e) {
+                  print(e);
+                }
               },
               child: Container(
                 decoration: BoxDecoration(

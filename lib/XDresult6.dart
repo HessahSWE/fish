@@ -69,7 +69,7 @@ class _XDresult6 extends State<XDresult6> {
         ),
         //elevation: 1,
       ),
-      body: MaterialApp(home:
+      body: 
       Stack(
         children: <Widget>[
           Pinned.fromPins(
@@ -125,7 +125,7 @@ class _XDresult6 extends State<XDresult6> {
             ),
           ),
       ]),
-      ),
+      
     );
   }
 }

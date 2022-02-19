@@ -2,7 +2,6 @@ import 'dart:io';
 import 'package:fish/XDresult6.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
 class XDfourthPage extends StatefulWidget {
@@ -50,8 +49,8 @@ class XDfourthPagee extends State<XDfourthPage> {
                   try {
                     await pickImage();
 
-                    setState(() {
-                      Navigator.push(
+                    setState(() async {
+                    await  Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => XDresult6(
