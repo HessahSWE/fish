@@ -1,4 +1,5 @@
 
+import 'package:fish/XDfourthPage.dart';
 import 'package:fish/tensorflow.dart';
 import 'package:flutter/material.dart';
 import 'XDfirstPage.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: XDfirstPage(),
+      home:XDfourthPage(),
     );
   }
 }
