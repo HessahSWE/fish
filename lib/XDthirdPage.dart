@@ -40,7 +40,10 @@ class XDthirdPage extends StatelessWidget {
             Pin(start: 59.0, end: 58.0),
             Pin(size: 50.0, middle: 0.6336),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                 Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => XDfourthPage()));
+              },
               child: Container(
                 decoration: BoxDecoration(
                   color: const Color(0xff0e538c),

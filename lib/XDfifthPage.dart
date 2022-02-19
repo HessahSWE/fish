@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:fish/XDresult6.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
+import 'package:flutter/services.dart';
 
 import 'package:image_picker/image_picker.dart';
 
@@ -11,15 +12,22 @@ class XDfifthPage extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  File? imageTake;
+  
 
+  File? imageTake;
   Future pickImage() async {
-    final imageTake = await ImagePicker().pickImage(source: ImageSource.camera);
-    if (imageTake == null) {
-      return;
+    try {
+      final imageTake =
+          await ImagePicker().pickImage(source: ImageSource.gallery);
+      if (imageTake == null) {
+        return;
+      }
+      final imageTemporary = File(imageTake.path);
+
+      this.imageTake = imageTemporary;
+    } on PlatformException catch (e) {
+      print(e);
     }
-    final imageTemporary = File(imageTake.path);
-    this.imageTake = imageTemporary;
   }
 
   @override

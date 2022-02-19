@@ -50,7 +50,7 @@ class XDfourthPage extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => XDresult6(
                               image: imageUpload,
-                            )));
+                            ),),);
               },
               child: Container(
                 decoration: BoxDecoration(
