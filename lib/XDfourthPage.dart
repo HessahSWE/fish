@@ -4,16 +4,23 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class XDfourthPage extends StatelessWidget {
   XDfourthPage({
- Key? key,
+    Key? key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       appBar:  AppBar(
+            backgroundColor: Colors.transparent,
+            //elevation: 1,
+          ),
       backgroundColor: const Color(0xffffffff),
       body: Stack(
         children: <Widget>[
-   
-      
+           Pinned.fromPins(
+            Pin(size: 300.0, middle: 0.5142),
+            Pin(size: 300.0, start: 160.0),
+            child: Image.asset('assets/fourthImage.png')
+          ),
           Pinned.fromPins(
             Pin(start: 59.0, end: 58.0),
             Pin(size: 50.0, middle: 0.7511),
@@ -25,7 +32,7 @@ class XDfourthPage extends StatelessWidget {
               ),
             ),
           ),
-          Align(
+          const Align(
             alignment: Alignment(0.006, 0.485),
             child: SizedBox(
               width: 104.0,
@@ -35,7 +42,7 @@ class XDfourthPage extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'SF Pro Display',
                   fontSize: 16,
-                  color: const Color(0xffffffff),
+                  color: Color(0xffffffff),
                 ),
                 textAlign: TextAlign.center,
                 softWrap: false,
@@ -47,4 +54,3 @@ class XDfourthPage extends StatelessWidget {
     );
   }
 }
-

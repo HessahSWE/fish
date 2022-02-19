@@ -11,6 +11,10 @@ class XDthirdPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       appBar:  AppBar(
+            backgroundColor: Colors.transparent,
+            //elevation: 1,
+          ),
       backgroundColor: const Color(0xffffffff),
       body: Stack(
         children: <Widget>[
@@ -26,6 +30,11 @@ class XDthirdPage extends StatelessWidget {
               ),
               softWrap: false,
             ),
+          ),
+              Pinned.fromPins(
+            Pin(size: 300.0, middle: 0.5142),
+            Pin(size: 300.0, start: 160.0),
+            child: Image.asset('assets/thirdImage.png')
           ),
           Pinned.fromPins(
             Pin(start: 59.0, end: 58.0),

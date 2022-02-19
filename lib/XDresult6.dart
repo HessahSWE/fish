@@ -9,6 +9,7 @@ class XDresult6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       backgroundColor: const Color(0xffffffff),
       body: Stack(
         children: <Widget>[

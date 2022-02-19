@@ -10,9 +10,15 @@ class XDsecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+          appBar:  AppBar(
+            backgroundColor: Colors.transparent,
+            //elevation: 1,
+          ),
+
       backgroundColor: const Color(0xffffffff),
       body: Stack(
         children: <Widget>[
+          
           Pinned.fromPins(
             Pin(size: 181.0, middle: 0.5142),
             Pin(size: 40.0, start: 94.0),
@@ -25,6 +31,11 @@ class XDsecondPage extends StatelessWidget {
               ),
               softWrap: false,
             ),
+          ),
+           Pinned.fromPins(
+            Pin(size: 300.0, middle: 0.5142),
+            Pin(size: 300.0, start: 160.0),
+            child: Image.asset('assets/secondImage.png')
           ),
           Pinned.fromPins(
             Pin(start: 59.0, end: 58.0),
