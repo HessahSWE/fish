@@ -5,11 +5,14 @@ import 'package:adobe_xd/pinned.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
-class XDfourthPage extends StatelessWidget {
+class XDfourthPage extends StatefulWidget {
   XDfourthPage({
     Key? key,
   }) : super(key: key);
+  XDfourthPagee createState() => XDfourthPagee();
+}
 
+class XDfourthPagee extends State<XDfourthPage> {
   File? imageUpload;
   Future pickImage() async {
     try {
@@ -21,7 +24,7 @@ class XDfourthPage extends StatelessWidget {
       final imageTemporary = File(imageUpload.path);
 
       this.imageUpload = imageTemporary;
-    } on PlatformException catch (e) {
+    } catch (e) {
       print(e);
     }
   }
@@ -29,58 +32,66 @@ class XDfourthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        //elevation: 1,
-      ),
-      backgroundColor: const Color(0xffffffff),
-      body: Stack(
-        children: <Widget>[
-          Pinned.fromPins(
-              Pin(size: 300.0, middle: 0.5142), Pin(size: 300.0, start: 160.0),
-              child: Image.asset('assets/fourthImage.png')),
-          Pinned.fromPins(
-            Pin(start: 59.0, end: 58.0),
-            Pin(size: 50.0, middle: 0.7511),
-            child: GestureDetector(
-              onTap: () {
-                pickImage();
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => XDresult6(
-                              image: imageUpload,
-                            ),),);
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  color: const Color(0xff0e538c),
-                  borderRadius: BorderRadius.circular(33.0),
-                  border:
-                      Border.all(width: 1.0, color: const Color(0xff707070)),
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          //elevation: 1,
+        ),
+        backgroundColor: const Color(0xffffffff),
+        body: Stack(
+          children: <Widget>[
+            Pinned.fromPins(Pin(size: 300.0, middle: 0.5142),
+                Pin(size: 300.0, start: 160.0),
+                child: Image.asset('assets/fourthImage.png')),
+            Pinned.fromPins(
+              Pin(start: 59.0, end: 58.0),
+              Pin(size: 50.0, middle: 0.7511),
+              child: GestureDetector(
+                onTap: () async {
+                  try {
+                    await pickImage();
+
+                    setState(() {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => XDresult6(
+                            image: imageUpload as File,
+                          ),
+                        ),
+                      );
+                    });
+                  } catch (e) {
+                    print(e);
+                  }
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: const Color(0xff0e538c),
+                    borderRadius: BorderRadius.circular(33.0),
+                    border:
+                        Border.all(width: 1.0, color: const Color(0xff707070)),
+                  ),
                 ),
               ),
             ),
-          ),
-          const Align(
-            alignment: Alignment(0.006, 0.485),
-            child: SizedBox(
-              width: 104.0,
-              height: 21.0,
-              child: Text(
-                'Upload  image',
-                style: TextStyle(
-                  fontFamily: 'SF Pro Display',
-                  fontSize: 16,
-                  color: Color(0xffffffff),
+            const Align(
+              alignment: Alignment(0.006, 0.485),
+              child: SizedBox(
+                width: 104.0,
+                height: 21.0,
+                child: Text(
+                  'Upload  image',
+                  style: TextStyle(
+                    fontFamily: 'SF Pro Display',
+                    fontSize: 16,
+                    color: Color(0xffffffff),
+                  ),
+                  textAlign: TextAlign.center,
+                  softWrap: false,
                 ),
-                textAlign: TextAlign.center,
-                softWrap: false,
               ),
             ),
-          ),
-        ],
-      ),
-    );
+          ],
+        ));
   }
 }

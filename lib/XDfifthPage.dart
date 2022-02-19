@@ -53,7 +53,7 @@ class XDfifthPage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) => XDresult6(
-                              image: imageTake,
+                              image: imageTake!,
                             )));
               },
               child: Container(

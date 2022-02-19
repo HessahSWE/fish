@@ -7,9 +7,10 @@ import 'package:tflite/tflite.dart';
 class XDresult6 extends StatefulWidget {
   XDresult6({
     Key? key,
-    this.image,
+    required this.image,
   }) : super(key: key);
-  File? image;
+  
+  File image;
   @override
   _XDresult6 createState() => _XDresult6();
 }
@@ -68,11 +69,12 @@ class _XDresult6 extends State<XDresult6> {
         ),
         //elevation: 1,
       ),
-      body: Stack(
+      body: MaterialApp(home:
+      Stack(
         children: <Widget>[
           Pinned.fromPins(
               Pin(size: 300.0, middle: 0.5142), Pin(size: 300.0, start: 160.0),
-              child: Image.file(widget.image!)),
+              child: Image.file(widget.image)),
           Pinned.fromPins(
             Pin(size: 180.0, middle: 0.65442),
             Pin(size: 40.0, start: 540.0),
@@ -92,7 +94,7 @@ class _XDresult6 extends State<XDresult6> {
             child: GestureDetector(
               onTap: () {
                 setState(() {
-                  classifyImage(widget.image!);
+                  classifyImage(widget.image);
                 });
               },
               child: Container(
@@ -122,7 +124,7 @@ class _XDresult6 extends State<XDresult6> {
               ),
             ),
           ),
-        ],
+      ]),
       ),
     );
   }
